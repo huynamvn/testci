@@ -1,5 +1,5 @@
-CircleCI YAML for RHMAP
-=======================
+CircleCI YAML for RHMAP node.js Applications
+============================================
 
 For projects node.js Cloud Applications and MBaaS Services that wish to use
 CircleCI for continuous integration and deployment this file can serve as a
@@ -20,22 +20,22 @@ For a full explanation of this file view the
 [CircleCI Docs](https://circleci.com/docs/configuration/) on the subject.
 We provide a basic overview of the file in this repo in the following sections.
 
-### machine
+#### machine
 Machine allows us to configure certain dependencies installed on our test
 machine. We simply configure the machine to use node.js 0.10.33 since we want
 to match the version used on RHMAP.
 
-### dependencies
+#### dependencies
 RHMAP uses an older version of MongoDB than is installed by default on the
 CircleCI containers. We use the dependencies section to install the same
 version that is running on RHMAP.
 
-### deployment
+#### deployment
 Using this section enables you to add a deploy phase for builds. This will only
 be triggered when a PR is merged, but not when it is opened - only the tests
 will run when a PR is opened.
 
-## Deployment to Red Hat Mobile
+## Continuous Deployment to Red Hat Mobile
 Deploying to Red Hat Mobile is achieved in the _deployment_ section as
 mentioned above. This is a sample deploy script that will automatically deploy
 to the "dev" environment on RHMAP whenever a PR is merged to the "dev" branch
