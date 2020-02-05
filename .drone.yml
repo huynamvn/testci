@@ -1,6 +1,10 @@
-pipeline:
-  node:
-    image: node:8.3.0
-    commands:
-      - yarn install
-      - yarn test
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: greeting
+  image: golang:1.12
+  commands:
+  - go build
+  - go test
