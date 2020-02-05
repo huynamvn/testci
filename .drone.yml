@@ -1,11 +1,6 @@
-kind: pipeline
-name: default
-
-steps:
-- name: docker  
-  image: plugins/docker
-  settings:
-    username: kevinbacon
-    password: pa55word
-    repo: foo/bar
-    tags: latest
+pipeline:
+  node:
+    image: node:8.3.0
+    commands:
+      - yarn install
+      - yarn test
